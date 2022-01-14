@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+    <style>
+        table{
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        table tr td{
+            width: 60px;
+            height: 60px;
+        }
+        .color1{
+            background-color: black;
+        }
+        .color2{
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>***Checkerboard***</h1>
+    </div>
+    <table>
+    {% for i in range(2): %}
+        <tr>
+            {% for x in range(4) %}
+            <td class="color1"></td>
+            <td class="color2"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for x in range(4) %}
+            <td class="color2"></td>
+            <td class="color1"></td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
